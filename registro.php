@@ -16,15 +16,15 @@
 
    <body>
 
-   <?php
-     session_start();
+			<?php
+				 session_start();
          unset($_SESSION['user']);
          unset($_SESSION['pass']);
          $_SESSION['user'] = "";
          $_SESSION['pass'] = "";
       ?>
 
-   <!--
+			<!--
          Esta parte de aqui es el banner de la pagina. Contiene el rectángulo verde, el logo y el link/pestaña de administración.
          -->
       <center>
@@ -37,7 +37,7 @@
            </tr>
         </table>
       <br>
-   <header>
+			<header>
          <nav>
            <ul style= "float: left;list-style-type: none;padding: 0; position: relative; left: 15%;">
               <li ><a  style="text-decoration: none; float: left; position: relative; right: 100%;"  data-toggle="modal" data-target="#modalApertura" >Apertura de Cuenta</a></lo>
@@ -50,11 +50,11 @@
          </nav>
       </header>
 
-   <!-- Modal -->
+			<!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
 
-      <div class="modal-content">
+						<div class="modal-content">
                <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel"></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -65,7 +65,7 @@
                <div class="modal-body">
                   <form action=registro3.php?mostrar="mostrar" method=post id=myForm1>
 
-           <div class="input-group input-group-lg">
+										 <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input type="text" class="form-control mb-2" id="inlineFormInput" name="nom" aria-describedby="sizing-addon1" placeholder="Nombre de Usuario" required />
                      </div>
@@ -79,10 +79,9 @@
                </div>
 
                <div class="modal-footer">
-                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                 <button  class="btn btn-primary" id="buttonHover" type="submit" onClik=comprobar()>Acceder</button>
-
-<!--    <button class="btn btn-lg btn-primary btn-block btn-signin" id="buttonHover" style = "width: 600px;" type="submit" onClik=comprobar() >Entrar</button> -->
+               		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+               		<button  class="btn btn-primary" id="buttonHover" type="submit" onClik=comprobar()>Acceder</button>
+               <!--    <button class="btn btn-lg btn-primary btn-block btn-signin" id="buttonHover" style = "width: 600px;" type="submit" onClik=comprobar() >Entrar</button> -->
                </form>
 
                </div>
@@ -96,7 +95,7 @@
       <div class="modal fade" id="modalApertura" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
 
-      <div class="modal-content">
+						<div class="modal-content">
                <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel"></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -107,7 +106,7 @@
                <div class="modal-body">
                   <form action=https://www.etl.it.uc3m.es/~etl/cgi-bin/aceptaDatos_v6.cgi method=post>
 
-           <div class="input-group input-group-lg">
+										 <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input type="text" class="form-control mb-2" id="inlineFormInput" name="nia" id='nia' value="" size=7  maxlength="7" onBlur="validarNIA(this)" aria-describedby="sizing-addon1" placeholder="0XXXXXX" required />
                      </div>
@@ -128,8 +127,8 @@
                </div>
 
                <div class="modal-footer">
-                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                 <button  class="btn btn-primary" id="buttonHover" type="submit" >Aceptar</button>
+               		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+               		<button  class="btn btn-primary" id="buttonHover" type="submit" >Aceptar</button>
                <!--    <button class="btn btn-lg btn-primary btn-block btn-signin" id="buttonHover" style = "width: 600px;" type="submit" onClik=comprobar() >Entrar</button> -->
                </form>
 
@@ -142,17 +141,17 @@
          <!-- La lógica de la página esta en registro2.php, registro.php es solo la parte con html, que contiene los formularios, donde recogeremos los datos. -->
          <center>
 
-      <br><br>
+						<br><br>
             <br><br>
 
-      <h1>Sistema de apertura de aulas</h1>
+						<h1>Sistema de apertura de aulas</h1>
 
-      <?php
+						<?php
 
-         $link = mysql_connect('localhost', 'registroaulas', '4v3ng3rs', 'aulas')
-                    or die('No se pudo conectar: ' . mysql_error());
+						   $link = mysql_connect('localhost', 'registroaulas', '4v3ng3rs', 'aulas')
+               					or die('No se pudo conectar: ' . mysql_error());
 
-        mysql_select_db('aulas') or die('No se pudo seleccionar la base de datos');
+							 mysql_select_db('aulas') or die('No se pudo seleccionar la base de datos');
 
 
                $sql = " SELECT horaSal FROM Registro_aulas_pruebas WHERE aula = '4.1.B01' AND horaSal IS NULL";
@@ -168,30 +167,31 @@
 
                if($row == 1){
 
-          echo '<ah class = "text-success" > ABIERTA </ah>';
+							 		echo '<ah class = "text-success" > ABIERTA </ah>';
 
-        }else{
+							 }else{
 
-                 echo '<ah class = "text-danger"> CERRADA </ah>';
+               		echo '<ah class = "text-danger"> CERRADA </ah>';
 
-        }
+							 }
 
                echo '<h3 style="display:inline-block; "> &nbsp;&nbsp;&nbsp;&nbsp 4.1.B02:';
 
                if($row2 == 1){
 
-          echo '<ah class = "text-success" > ABIERTA </ah>';
+							 		echo '<ah class = "text-success" > ABIERTA </ah>';
 
-        }else{
-echo '<ah class = "text-danger"> CERRADA </ah>';
+							 }else{
 
-        }
+							 		echo '<ah class = "text-danger"> CERRADA </ah>';
 
-        echo' </h3></h3>';
+							 }
 
-      ?>
+							 echo' </h3></h3>';
 
-      <table border=0 >
+						?>
+
+						<table border=0 >
                <tr>
                   <td width=350px align=center>
                      <br>

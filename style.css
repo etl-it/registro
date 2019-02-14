@@ -1,0 +1,141 @@
+/* Elementos principales de la página */ 
+
+body
+{
+	font-family: 'Trebuchet MS', Arial , sans-serif;
+	color: color: #181818;
+}
+
+#main_wrapper
+{
+
+	width: auto;
+	margin: auto;
+}
+
+section h1, footer h1, nav a{
+
+	text-transform: uppercase;
+}
+
+
+/* Encabezado */
+#main_title
+{
+	display: inline-block;
+}
+
+header h1
+{
+
+	font-family: 'Gentium' , serif;
+	font-size: 2.5em;
+	font-weight: normal;
+}
+
+#logo, header h1
+{
+	display: inline-block;
+	margin-bottom: 0px;
+}
+
+
+/* Navegación */ 
+nav
+{
+
+	display: inline-block;
+	width: auto;
+	text-align: right;
+}
+
+nav ul
+{
+	list-style-type: none;
+	margin-right: 50px;
+}
+
+nav li
+{
+	display: inline-block;
+	margin-right: 5px;
+}
+
+nav a
+{
+	font-size: 1.3em;
+	color: #181818;
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+nav a:hover
+{
+	color: #D5F4F3;
+	text-decoration:none; 
+}
+
+#buttonHover{
+	padding: 15px 20px;
+	display: inline-block;
+	background: #D5F4F3;
+	color: #103c3b;
+	border: solid #9ae5e2;	
+	border-radius: 0.25em;
+	margin-right: 55px;;
+	border-bottom: 5px solid #9ae5e2;
+	font-weight: bold;
+	    cursor: pointer;
+}
+
+
+#buttonHover:hover{
+background: #ebfaf9;
+}
+
+ah{
+
+	font-family: 'Gentium' , serif
+	color: #19ff00;
+}
+
+
+select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 250px;
+}
+
+
+p{
+background: #fcfcfc;
+padding:15px;
+display: inline-block;
+border-left: 5px solid #99efec;
+font-weight: bold;
+}
+
+.navbar-custom {
+    background-color: #D5F4F3;
+}
+
+
+
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgb(0,0,0,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #000000;
+}

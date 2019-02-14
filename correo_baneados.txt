@@ -1,0 +1,16 @@
+Hola nombre , ."/n".
+
+Revisando el registro telemático de los laboratorios del Departamento de Ingeniería Telemática se ha detectado que noha realizado la confirmación de salida correspondiente á fecha. ."/n".
+
+Según las normas de ocupación es necesario que firmes tanto a la entrada como a la salida. ."/n".
+
+En principio, entendemos que esta confirmación no ha sido registrada por desconocimiento o debido a alguna razón puntual. Si bien este es un mensaje informativo, si este hecho se produce de forma reiterada sin justificación, lamentablemente perderías el derecho a solicitar la apertura de las aulas del departamento , según está indicado en las normas de apertura de aulas. En todo caso, ¿podrías informarnos de la razón por la que no firmaste la salida del aula? <br>
+
+
+
+                 ."/n"."/n"."/n".
+
+                Un saludo. <br>
+                Equipo de Técnicos de Laboratorios.<br>
+                Departamento de Ingeniería Telemática.
+
