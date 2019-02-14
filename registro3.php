@@ -27,6 +27,7 @@
    <body onload="Javascript:history.go(1);" onunload="Javascript:history.go(1);">
 
       <?php
+         include 'functions.php';
          session_start();
 
          // se comprueba si llega el nombre por POST
@@ -39,18 +40,21 @@
 
          if(isset($_SESSION['user'])){ // Comprobamos si la variable user esta inicializada.
 
-           //Conectarse servidor ldap
+
+            list($ds , $ldaprdn , $ldappass) = conect_ldap($_SESSION['user'] , $_SESSION['pass'] , "Adm");
+           
+            /*Conectarse servidor ldap
            $ds = ldap_connect ("ldaps://repldap.lab.it.uc3m.es",636) or die ("Could not connect to LDAP Server");
            $ldaprdn = "uid=".$_SESSION['user'].",ou=Adm,dc=lab,dc=it,dc=uc3m,dc=es";
            $ldappass = $_SESSION['pass'];
            ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
-
+            */
            if($ds){
              $ldapbind = ldap_bind($ds, $ldaprdn , $ldappass) ;
 
              if ( $ldapbind) {
 
-                 //No hacemos anda ya que solo queremos auntenticar.
+                 //No hacemos nada ya que solo queremos auntenticar.
 
 
              //$rs = ldap_search ($ds,"dc=lab,dc=it,dc=uc3m,dc=es","uid=$user");
@@ -101,6 +105,7 @@
                   if(isset($_GET['aula'])) {
                      
                      $aula = $_GET['aula'];
+                     
                      $link = mysql_connect('localhost', 'registroaulas', '4v3ng3rs', 'aulas')
                      or die('No se pudo conectar: ' . mysql_error());
                      mysql_select_db('aulas') or die('No se pudo seleccionar la base de datos');
@@ -117,14 +122,18 @@
                     $paso = " SELECT ID FROM Registro_aulas_pruebas WHERE aula = '$aula' AND horaSal IS NULL";
                     $var = mysql_query($paso) or die('Consulta fallida: ' . mysql_error());
                     $var1 = mysql_fetch_row($var);
-                     
-                    $ds = ldap_connect ("ldaps://repldap.lab.it.uc3m.es",636) //Nos conectamos al servidor de ldap
-                    or die ("Could not connect to LDAP Server");
 
-                    $ldaprdn = "uid=".$user.",ou=Alum,dc=lab,dc=it,dc=uc3m,dc=es";
+
+                    // En este caso no es necesaria la pass, porque no tenemos que autenticar. 
+                    list($ds , $ldaprdn , $ldappass) = conect_ldap($user , "xxx" , "Alum");
+
+                    //$ds = ldap_connect ("ldaps://repldap.lab.it.uc3m.es",636) //Nos conectamos al servidor de ldap
+                     // or die ("Could not connect to LDAP Server");
+                   // $ldaprdn = "uid=".$user.",ou=Alum,dc=lab,dc=it,dc=uc3m,dc=es";
+
                     $rs = ldap_search ($ds,"dc=lab,dc=it,dc=uc3m,dc=es","uid=$user");
-
                     $info = ldap_get_entries($ds,$rs);
+
                     $mail;
                     $nombre;
                   

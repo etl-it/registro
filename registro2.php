@@ -35,24 +35,17 @@
 
 
 
-    list($ds , $ldaprdn , $ldappass) = conect_ldap($user , $passwd);
+    list($ds , $ldaprdn , $ldappass) = conect_ldap($user , $passwd , "Alum");
   
   if ($ds) {
-
-
-
-    ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3) ;
+    
     $ldapbind = ldap_bind($ds, $ldaprdn , $ldappass);
 
-
-
     if ($ldapbind) {
-
 
       $link = mysql_connect('localhost', 'registroaulas', '4v3ng3rs', 'aulas')
       or die('No se pudo conectar: ' . mysql_error());
       mysql_select_db('aulas') or die('No se pudo seleccionar la base de datos');
-
 
 
       if ($_SESSION['correcto'] == 1){

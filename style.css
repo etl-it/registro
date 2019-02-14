@@ -3,7 +3,7 @@
 body
 {
 	font-family: 'Trebuchet MS', Arial , sans-serif;
-	color: color: #181818;
+	color: color = #181818;
 }
 
 #main_wrapper
@@ -96,7 +96,7 @@ background: #ebfaf9;
 ah{
 
 	font-family: 'Gentium' , serif
-	color: #19ff00;
+	color =  #19ff00;
 }
 
 
