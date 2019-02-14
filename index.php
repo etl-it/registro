@@ -66,10 +66,11 @@
                                                 name="nia" id='nia' value="" size=7  maxlength="7" onBlur="validarNIA(this)"
                                                 aria-describedby="sizing-addon1" required />
                                             <label class="label--desc">Cuenta de Telemática</label>
-                                        </div>
-                                        <div class="input-group input-group-lg">
+                                            <div class="input-group input-group-lg">
                                           <input type="hidden" NAME="tipo" VALUE="alumno" checked >
                                         </div>
+                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
