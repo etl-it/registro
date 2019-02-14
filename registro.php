@@ -1,4 +1,3 @@
-Abraham Huélamo, [14.02.19 17:35]
 <!DOCTYPE html>
 <html>
    <head>
@@ -83,7 +82,6 @@ Abraham Huélamo, [14.02.19 17:35]
                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                  <button  class="btn btn-primary" id="buttonHover" type="submit" onClik=comprobar()>Acceder</button>
 
-Abraham Huélamo, [14.02.19 17:35]
 <!--    <button class="btn btn-lg btn-primary btn-block btn-signin" id="buttonHover" style = "width: 600px;" type="submit" onClik=comprobar() >Entrar</button> -->
                </form>
 
@@ -185,8 +183,6 @@ Abraham Huélamo, [14.02.19 17:35]
           echo '<ah class = "text-success" > ABIERTA </ah>';
 
         }else{
-
-Abraham Huélamo, [14.02.19 17:35]
 echo '<ah class = "text-danger"> CERRADA </ah>';
 
         }
