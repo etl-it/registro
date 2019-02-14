@@ -33,7 +33,7 @@
 <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
 <!-- Main CSS-->
-<link href="css/main.css" rel="stylesheet" media="all">
+<link href="CSS/main.css" rel="stylesheet" media="all">
 
 
 </head>
@@ -130,7 +130,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/table/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="js/table/main.js"></script>
+	<script src="JS/table/main.js"></script>
 
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<!-- Vendor JS-->
@@ -139,7 +139,7 @@
 	<script src="vendor/datepicker/daterangepicker.js"></script>
 
 	<!-- Main JS-->
-	<script src="js/global.js"></script>
+	<script src="JS/global.js"></script>
 
 </body>
 </html>
