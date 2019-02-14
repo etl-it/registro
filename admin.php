@@ -76,22 +76,24 @@
 		 }
 		 ?>
 		 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-         <a class="navbar-brand" href="#"><strong>Cerrar Aula</strong></a>
+         <a class="navbar-brand" href="#"><strong>Administración</strong></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav mr-auto">
+			 <li class="nav-item active">
+                     <a class="nav-link" href="#">Cerrar Aula <span class="sr-only">(current)</span></a>
+                 </li>
                  <li class="nav-item active">
                      <a class="nav-link" href="#">Modificar Aula <span class="sr-only">(current)</span></a>
-				 </li>
+                 </li>
 				 <form class="navbar-form navbar-left" action="?desbanear&baneados"  method=post id=myFor >
                   <div class="form-group">
                      <input type="text" class="form-control" name="alumno"  aria-describedby="sizing-addon1" placeholder="Usuario a desbanear">
                   </div>
                   <button type="submit" class="btn btn-default">Desbanear</button>
                </form>
-
              </ul>
          </div>
      </nav>
