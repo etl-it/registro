@@ -35,7 +35,7 @@
 
 
 
-    $ds , $ldaprdn , $ldappass = conect_ldap($user , $passwd);
+    list($ds , $ldaprdn , $ldappass) = conect_ldap($user , $passwd);
   
   if ($ds) {
 

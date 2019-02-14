@@ -7,7 +7,7 @@ function conect_ldap($user , $passwd){
   $ldaprdn = "uid=".$user.",ou=Alum,dc=lab,dc=it,dc=uc3m,dc=es";
   $ldappass = $passwd;
 
-    return $ds , $ldaprdn , $ldappass;
+    return array ($ds , $ldaprdn , $ldappass);
 
 }
 
