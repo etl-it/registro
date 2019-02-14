@@ -8,6 +8,8 @@
 	<script type="text/javascript" src="JS/bootstrap.min.js"></script>
 
 -->
+  <?
+      include 'functions.php';
 
 </head>
 <body >
@@ -29,10 +31,8 @@
 
 
 
-  $ds = ldap_connect ("ldaps://repldap.lab.it.uc3m.es",636) //Nos conectamos al servidor de ldap
-  or die ("Could not connect to LDAP Server");
-  $ldaprdn = "uid=".$user.",ou=Alum,dc=lab,dc=it,dc=uc3m,dc=es";
-  $ldappass = $passwd;
+    $ds , $ldaprdn , $ldappass = conect_ldap();
+  
   if ($ds) {
 
 
