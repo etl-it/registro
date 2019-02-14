@@ -13,8 +13,8 @@
     <title>Sistema de Apertura de Aulas</title>
     <link rel="icon" type="image/png" href="logoetl.png" sizes="16x16"> <!-- Es el icono que sale en la pestaña -->
     <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/CSS/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/CSS/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
@@ -23,7 +23,7 @@
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="CSS/main.css" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -200,7 +200,7 @@
     <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <script src="JS/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
