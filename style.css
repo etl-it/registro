@@ -27,13 +27,14 @@ section h1, footer h1, nav a{
 
 header h1
 {
-
 	font-family: 'Gentium' , serif;
 	font-size: 2.5em;
 	font-weight: normal;
+	display: inline-block;
+	margin-bottom: 0px;
 }
 
-#logo, header h1
+#logo
 {
 	display: inline-block;
 	margin-bottom: 0px;
@@ -43,7 +44,6 @@ header h1
 /* Navegación */ 
 nav
 {
-
 	display: inline-block;
 	width: auto;
 	text-align: right;
@@ -64,14 +64,14 @@ nav li
 nav a
 {
 	font-size: 1.3em;
-	color: #181818;
+	color: #ffffff;
 	margin-right: 5px;
 	text-decoration: none;
 }
 
 nav a:hover
 {
-	color: #D5F4F3;
+	color: #ffffff;
 	text-decoration:none; 
 }
 
