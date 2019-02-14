@@ -98,11 +98,12 @@
                                             <input class="input--style-6" type="text" id="inlineFormInput"
                                                 name="nia" id='nia' value="" size=7  maxlength="7" onBlur="validarNIA(this)"
                                                 aria-describedby="sizing-addon1" required />
-                                            <label class="label--desc">Cuenta de Telemática</label>
-                                        </div>
-                                        <div class="input-group input-group-lg">
+											<label class="label--desc">Cuenta de Telemática</label>
+											<div class="input-group input-group-lg">
                                           <input type="hidden" NAME="tipo" VALUE="alumno" checked >
                                         </div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
