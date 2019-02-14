@@ -206,7 +206,7 @@
                      if($row2 == 0){
                         echo "<script type=\"text/javascript\"> alert('El aula esta cerrada.'); window.location='registro3.php?mostrar';</script>";
                     }else{
-                       if($aula == "4.1B01"){
+                       if($aula == "4.1.B01"){
                         $query = " UPDATE  Registro_aulas_pruebas SET aula ='4.1.B02' WHERE ID = '$var1[0]';";
                         $var5 = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
    
