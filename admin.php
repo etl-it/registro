@@ -17,8 +17,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/table/perfect-scrollbar/perfect-scrollbar.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/tablecss/util.css">
-	<link rel="stylesheet" type="text/css" href="css/tablecss/main.css">
+	<link rel="stylesheet" type="text/css" href="CSS/tablecss/util.css">
+	<link rel="stylesheet" type="text/css" href="CSS/tablecss/main.css">
 <!--===============================================================================================-->
 
 <link rel="icon" type="image/png" href="logoetl.png" sizes="16x16"> <!-- Es el icono que sale en la pestaña -->
