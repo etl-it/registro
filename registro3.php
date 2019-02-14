@@ -16,10 +16,10 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 
 
    </head>
@@ -84,33 +84,40 @@
                <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" >Cerrar Aula<span class="caret"></span></a>
                   <ul class="dropdown-menu" name = aula>
-                     <li><a href="?aula=4.1.B01&mostrar">4.1B01</a></li>
-                     <li><a href="?aula=4.1.B02&mostrar">4.1B02</a></li>
+                     <li><a href="?aula=4.1.B01&mostrar&cerrar">4.1B01</a></li>
+                     <li><a href="?aula=4.1.B02&mostrar&cerrar">4.1B02</a></li>
                   </ul>
                </li>
+               
+               <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" >Modificar Aula<span class="caret"></span></a>
+                     <ul class="dropdown-menu" name = aula>
+                        <li><a href="?aula=4.1.B01&mostrar">4.1B01</a></li>
+                        <li><a href="?aula=4.1.B02&mostrar">4.1B02</a></li>
+                     </ul>
+                  </li>
+
                <?php
                   if(isset($_GET['aula'])) {
-
-
-                    $aula = $_GET['aula'];
-                    $link = mysql_connect('localhost', 'registroaulas', '4v3ng3rs', 'aulas')
-                    or die('No se pudo conectar: ' . mysql_error());
-                    mysql_select_db('aulas') or die('No se pudo seleccionar la base de datos');
-
+                     
+                     $aula = $_GET['aula'];
+                     $link = mysql_connect('localhost', 'registroaulas', '4v3ng3rs', 'aulas')
+                     or die('No se pudo conectar: ' . mysql_error());
+                     mysql_select_db('aulas') or die('No se pudo seleccionar la base de datos');
+ 
                     $sql2 = " SELECT horaSal FROM Registro_aulas_pruebas WHERE aula= '$aula' AND horaSal IS NULL";
                     $va2 = mysql_query($sql2) or die('Consulta fallida: a' . mysql_error());
                     $row2 = mysql_num_rows($va2);
-
-
-
+                  
                     $sql3 = " SELECT nia FROM Registro_aulas_pruebas WHERE aula= '$aula' AND horaSal IS NULL";
                     $va3 = mysql_query($sql3) or die('Consulta fallida:b ' . mysql_error());
                     $row3 = mysql_fetch_row($va3);
                     $user = $row3[0];
-
-
-
-
+                    
+                    $paso = " SELECT ID FROM Registro_aulas_pruebas WHERE aula = '$aula' AND horaSal IS NULL";
+                    $var = mysql_query($paso) or die('Consulta fallida: ' . mysql_error());
+                    $var1 = mysql_fetch_row($var);
+                     
                     $ds = ldap_connect ("ldaps://repldap.lab.it.uc3m.es",636) //Nos conectamos al servidor de ldap
                     or die ("Could not connect to LDAP Server");
 
@@ -120,29 +127,22 @@
                     $info = ldap_get_entries($ds,$rs);
                     $mail;
                     $nombre;
-
-
-                    if ($info["count"] == 0 ){
-                      $info =false;
-                    }elseif ($info) {
-                      $nombre = $info[0]["cn"][0];
-                      $mail = $info[0]["mailroutingaddress"][0];
-
+                  
+                     if ($info["count"] == 0 ){
+                         $info =false;
+                     }elseif ($info) {
+                         $nombre = $info[0]["cn"][0];
+                         $mail = $info[0]["mailroutingaddress"][0];
                     }
 
-                    $fech = shell_exec('date "+%d/%m/%Y"');
-                    $hore = shell_exec('date "+%H:%M:%S"');
-
-
-
-                    if($row2 == 0){
-                      echo "<script type=\"text/javascript\"> alert('El aula esta cerrada.'); window.location='registro3.php?mostrar';</script>";
-                    }else{
-
-                      $paso = " SELECT ID FROM Registro_aulas_pruebas WHERE aula = '$aula' AND horaSal IS NULL";
-                      $var = mysql_query($paso) or die('Consulta fallida: ' . mysql_error());
-                      $var1 = mysql_fetch_row($var);
-
+                     $fech = shell_exec('date "+%d/%m/%Y"');
+                     $hore = shell_exec('date "+%H:%M:%S"');
+                  
+                    if(isset($_GET['cerrar'])){
+                     
+                     if($row2 == 0){
+                         echo "<script type=\"text/javascript\"> alert('El aula esta cerrada.'); window.location='registro3.php?mostrar';</script>";
+                     }else{
 
                       $bool = TRUE;
                       $query = " UPDATE  Registro_aulas_pruebas SET horaSal = '$hore' WHERE ID = '$var1[0]';";
@@ -154,18 +154,15 @@
                       $var = mysql_query($consulta_nia) or die('Consulta fallida: ' . mysql_error());
                       $var6 = mysql_fetch_row($var);
 
-
                       $sql4 = "SELECT Veces FROM Historico_Baneados_pruebas WHERE nia = '$var6[0]'";
                       $var4 = mysql_query($sql4) or die('Consulta fallida: No se puede encontrar usuario' . mysql_error());
                       $veces = mysql_fetch_row($var4);
 
                       if($veces[0] == 0){
-
-                        $query = "  INSERT INTO Baneados_pruebas (`Nombre` , `NIA`, `fecha` , `veces`) VALUES ('$nombre', '$var6[0] ','$fech' , 1);";
+                        $query = "  INSERT INTO Baneados_pruebas (`Nombre` , `NIA`, `fecha` , `veces`) VALUES ('$nombre', '$user ','$fech' , 1);";
                         $var8 = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-
                       }else{
-                        $sql = "  INSERT INTO Baneados_pruebas (`Nombre` , `NIA`, `fecha` , `veces`) VALUES ('$nombre', '$var6[0] ','$fech' , $veces[0] +1);";
+                        $sql = "  INSERT INTO Baneados_pruebas (`Nombre` , `NIA`, `fecha` , `veces`) VALUES ('$nombre', '$user ','$fech' , $veces[0] +1);";
                         $var = mysql_query($sql) or die('Consulta fallida: ' . mysql_error());
                         $query = " DELETE FROM  Historico_Baneados_pruebas WHERE NIA = '$var6[0]';";
                         $var5 = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
@@ -174,10 +171,6 @@
                       /*		$fp = fopen("correo_baneados.txt", "rb");
                       $datos = fread($fp, filesize("miarchivo.txt"));
                       fclose($fp);*/
-
-
-
-
                       $txt = "Hola $nombre ,<br>
 
                       Revisando el registro telemático de los laboratorios del Departamento de Ingeniería Telemática se ha detectado que no ha realizado la confirmación de salida correspondiente al diá $fech.<br>
@@ -186,10 +179,7 @@
 
                       En principio, entendemos que esta confirmación no ha sido registrada por desconocimiento o debido a alguna razón puntual. Si bien este es un mensaje informativo, si este hecho se produce de forma reiterada sin justificación, lamentablemente perderías el derecho a solicitar la apertura de las aulas del departamento , según está indicado en las normas de apertura de aulas. En todo caso, ¿podrías informarnos de la razón por la que no firmaste la salida del aula?<br>
 
-
-
                       <br><br><br>
-
                       Un saludo <br>
                       Equipo de Técnicos de Laboratorios. <br>
                       Departamento de Ingeniería Telemática.";
@@ -201,20 +191,25 @@
                       //dirección del remitente
                       $headers .= "From: ETL <staff@adm.it.uc3m.es>\r\n";
                       // $bool = mail("staff@adm.it.uc3m.es" ,$titulo,$txt,$headers);
-
+                     
 
                     }
+                  }else{
+                     if($row2 == 0){
+                        echo "<script type=\"text/javascript\"> alert('El aula esta cerrada.'); window.location='registro3.php?mostrar';</script>";
+                    }else{
+                       if($aula == "4.1B01"){
+                        $query = " UPDATE  Registro_aulas_pruebas SET aula ='4.1.B02' WHERE ID = '$var1[0]';";
+                        $var5 = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+   
+                       }else{
+                        $query = " UPDATE  Registro_aulas_pruebas SET aula ='4.1.B01' WHERE ID = '$var1[0]';";
+                        $var5 = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+                       }
                   }
+               }
+            }
                   ?>
-
-                  <li class="dropdown">
-                     <a class="dropdown-toggle" data-toggle="dropdown" >Modificar Aula<span class="caret"></span></a>
-                     <ul class="dropdown-menu" name = aula>
-                        <li><a href="?aula=4.1.B01&mostrar">4.1B01</a></li>
-                        <li><a href="?aula=4.1.B02&mostrar">4.1B02</a></li>
-                     </ul>
-                  </li>
-
 
                <form class="navbar-form navbar-left" action="?desbanear&baneados"  method=post id=myFor >
                   <div class="form-group">
