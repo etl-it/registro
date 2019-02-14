@@ -8,8 +8,12 @@
 	<script type="text/javascript" src="JS/bootstrap.min.js"></script>
 
 -->
-  <?
+  <?php
+
       include 'functions.php';
+
+ ?>  
+
 
 </head>
 <body >
