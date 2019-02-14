@@ -88,11 +88,25 @@
                  <li class="nav-item active">
                      <a class="nav-link" href="#">Modificar Aula <span class="sr-only">(current)</span></a>
                  </li>
-				 <form class="navbar-form navbar-left" action="?desbanear&baneados"  method=post id=myFor >
-                  <div class="form-group">
-                     <input type="text" class="form-control" name="alumno"  aria-describedby="sizing-addon1" placeholder="Usuario a desbanear">
-                  </div>
-                  <button type="submit" class="btn btn-default">Desbanear</button>
+				 <form  action="?desbanear&baneados"  method=post id=myFor >
+				 <div class="form-row  m-l-100 m-b-55">
+                            <div class="name">Usuario</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-6" type="text" id="inlineFormInput"
+                                                name="nia" id='nia' value="" size=7  maxlength="7" onBlur="validarNIA(this)"
+                                                aria-describedby="sizing-addon1" required />
+                                            <label class="label--desc">Cuenta de Telemática</label>
+                                        </div>
+                                        <div class="input-group input-group-lg">
+                                          <input type="hidden" NAME="tipo" VALUE="alumno" checked >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <button class="btn btn--radius-2 btn--green" type="submit">Entrar</button>   
                </form>
              </ul>
          </div>
