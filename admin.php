@@ -136,7 +136,7 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="">
+                                            <input class="input--style-5" type="text" name="">
                                             <label class="label--desc">Cuenta de Telemática</label>
                                         </div>
                                     </div>
@@ -148,7 +148,9 @@
 						</div>
 			   </form>
 			</a></li>
-			<li><a href="#about">Cerrar Sesión</a></li>
+			<ul class="nav navbar-nav navbar-right navbar-custom">
+               <li><a href="https://registroaulas.lab.it.uc3m.es"><span class="glyphicon glyphicon-log-out"></span>Cerrar Sesion</a></li>
+            </ul>
 		</ul>
 
 		<div class="container-table100 bg-gra-01">
