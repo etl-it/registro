@@ -126,7 +126,16 @@
 			
 			</li>
 			<li><a href="#news">Modificar Aula</a></li>
-			<li><a href="#contact">Contact</a></li>
+
+
+			<li><a>			
+				<form class="navbar-form navbar-left" action="?desbanear&baneados"  method=post id=myFor >
+                  <div class="form-group">
+                     <input type="text" class="form-control" name="alumno"  aria-describedby="sizing-addon1" placeholder="Usuario a desbanear">
+                  </div>
+                  <button type="submit" class="btn btn-default">Desbanear</button>
+			   </form>
+			</a></li>
 			<li><a href="#about">Cerrar Sesión</a></li>
 		</ul>
 
