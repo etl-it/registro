@@ -116,7 +116,8 @@
 		
 	<div class="limiter">
 	<ul id=nav1 >
-			<li><a  href="#home">Cerrar Aula</a></li>
+			
+			<li> <a class="dropdown-toggle" data-toggle="dropdown" >Cerrar Aula<span class="caret"></span></a></li>
 			<li><a href="#news">Modificar Aula</a></li>
 			<li><a href="#contact">Contact</a></li>
 			<li><a href="#about">Cerrar Sesión</a></li>
