@@ -131,17 +131,13 @@
 			<li><a>			
 				<form  action="?desbanear&baneados"  method=post id=myFor >
 				<div class="form-row m-b-55">
-                            <div class="name">Usuario y Contraseña</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             <input class="input--style-5" type="text" name="">
-                                            <label class="label--desc">Cuenta de Telemática</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-									<button type="submit" class="btn btn--radius-2 btn--green">Desbanear</button>
+											<button type="submit" class="btn btn--green">Desbanear</button>
+										</div>
                                     </div>
                                 </div>
                             </div>
