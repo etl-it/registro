@@ -167,7 +167,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: transparent;
+  background-color: #00e677;
   color: black;
 
 }
@@ -313,6 +313,7 @@ h6 {
 .bg-red {
   background: #fa4251;
 }
+
 
 .bg-gra-01 {
   background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
