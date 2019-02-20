@@ -160,74 +160,16 @@
 /* Enlaces */
 
 /* Navegación */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
 
-}
-
-nav
+#nav1
 {
-    display: inline-block;
-    width: 110%;
-    padding:  0 5%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  color: black;
 
-}
-
-nav ul
-{
-    list-style-type: none;
-}
-
-nav li
-{
-    display: inline-block;
-    width: 45%;
-}
-
-nav li:nth-child(2)
-{
-    text-align: right;
-}
-
-
-nav a
-{
-    font-size: 1.3em;
-    padding-bottom: 3px;
-    text-decoration: none;
-    color: black;
-}
-
-.a-white
-{
-    color: white;
-}
-
-
-nav a:hover
-{
-    color: #D5F4F3;
-    border-bottom: 3px solid #D5F4F3;
-}
-
-
-
-.navbar {
-    background-color: transparent;
-}
-
-.top-nav-collapse {
-    background-color: #4285F4;
-}
-
-@media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #4285F4;
-    }
 }
 
 

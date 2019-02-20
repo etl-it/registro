@@ -75,6 +75,7 @@
 			 exit ("Acceso Restringuido");
 		 }
 		 ?>
+		 <!--
 		 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
          <a class="navbar-brand" href="#"><strong>Administración</strong></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,7 +112,14 @@
                </form>
              </ul>
          </div>
-     </nav>
+     </nav> -->$
+		<ul id=nav1>
+			<li><a class="active" href="#home">Home</a></li>
+			<li><a href="#news">News</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#about">About</a></li>
+		</ul>
+
 	<div class="limiter">
 		<div class="container-table100 bg-gra-01">
 			<div class="wrap-table100">
