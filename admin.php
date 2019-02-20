@@ -119,7 +119,7 @@
 			
 			<li> 
 				<a class="dropdown-toggle" data-toggle="dropdown" >Cerrar Aula<span class="caret"></span></a>
-				<ul class="dropdown-menus" name = aula>
+				<ul class="dropdown-menu" style="background-color:transparent;" name = aula>
                      <li><a href="?aula=4.1.B01&mostrar&cerrar">4.1B01</a></li>
                      <li><a href="?aula=4.1.B02&mostrar&cerrar">4.1B02</a></li>
                   </ul>
