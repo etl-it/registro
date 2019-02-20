@@ -141,18 +141,11 @@
                                         </div>
                                     </div>
                                     <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5 " type="password" name="last_name">
-                                            <label class=" glyphicon glyphicon-lock label--desc">Contraseña</label>
-                                        </div>
+									<button type="submit" class="btn btn--radius-2 btn--green">Desbanear</button>
                                     </div>
                                 </div>
                             </div>
 						</div>
-						<div>
-							<button type="submit" class="btn btn--radius-2 btn--green">Desbanear</button>
-                        </div>
-                  
 			   </form>
 			</a></li>
 			<li><a href="#about">Cerrar Sesión</a></li>
