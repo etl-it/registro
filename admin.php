@@ -112,7 +112,7 @@
                </form>
              </ul>
          </div>
-     </nav> -->$
+     </nav> -->
 		<ul id=nav1>
 			<li><a class="active" href="#home">Home</a></li>
 			<li><a href="#news">News</a></li>
