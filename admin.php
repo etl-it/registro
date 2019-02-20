@@ -115,7 +115,7 @@
      </nav> -->
 		
 	<div class="limiter">
-	<ul id=nav1>
+	<ul id=nav1 class="bg-gra-01">
 			<li><a class="active" href="#home">Home</a></li>
 			<li><a href="#news">News</a></li>
 			<li><a href="#contact">Contact</a></li>
