@@ -129,11 +129,30 @@
 
 
 			<li><a>			
-				<form class="navbar-form navbar-left" action="?desbanear&baneados"  method=post id=myFor >
-                  <div class="form-group">
-                     <input type="text" class="form-control" name="alumno"  aria-describedby="sizing-addon1" placeholder="Usuario a desbanear">
-                  </div>
-                  <button type="submit" class="btn btn-default">Desbanear</button>
+				<form  action="?desbanear&baneados"  method=post id=myFor >
+				<div class="form-row m-b-55">
+                            <div class="name">Usuario y Contraseña</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" name="">
+                                            <label class="label--desc">Cuenta de Telemática</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5 " type="password" name="last_name">
+                                            <label class=" glyphicon glyphicon-lock label--desc">Contraseña</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+						<div>
+							<button type="submit" class="btn btn--radius-2 btn--green">Desbanear</button>
+                        </div>
+                  
 			   </form>
 			</a></li>
 			<li><a href="#about">Cerrar Sesión</a></li>
