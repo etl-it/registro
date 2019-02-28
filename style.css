@@ -1,9 +1,19 @@
-/* Elementos principales de la página */ 
+/* Elementos principales de la página */
+#img1{
+
+	margin:auto;
+	width: 90px;
+	height: 85px;
+	padding: 3px 0px 0px 8px;
+
+}
+
+
 
 body
 {
 	font-family: 'Trebuchet MS', Arial , sans-serif;
-	color: color = #181818;
+	color: #181818;
 }
 
 #main_wrapper
@@ -27,23 +37,23 @@ section h1, footer h1, nav a{
 
 header h1
 {
+
 	font-family: 'Gentium' , serif;
 	font-size: 2.5em;
 	font-weight: normal;
-	display: inline-block;
-	margin-bottom: 0px;
 }
 
-#logo
+#logo, header h1
 {
 	display: inline-block;
 	margin-bottom: 0px;
 }
 
 
-/* Navegación */ 
+/* Navegación */
 nav
 {
+
 	display: inline-block;
 	width: auto;
 	text-align: right;
@@ -53,14 +63,12 @@ nav ul
 {
 	list-style-type: none;
 	margin-right: 50px;
-	background-color: #D5F4F3;;
 }
 
 nav li
 {
 	display: inline-block;
 	margin-right: 5px;
-	background-color: transparent;
 }
 
 nav a
@@ -69,22 +77,20 @@ nav a
 	color: #181818;
 	margin-right: 5px;
 	text-decoration: none;
-	background-color: transparent;
 }
 
 nav a:hover
 {
 	color: #D5F4F3;
-	text-decoration:none; 
-	background:  #D5F4F3;
+	text-decoration:none;
 }
 
-#buttonHover{
+#buttonHover , #buttonHover1 , #buttonHover2{
 	padding: 15px 20px;
 	display: inline-block;
 	background: #D5F4F3;
 	color: #103c3b;
-	border: solid #9ae5e2;	
+	border: solid #9ae5e2;
 	border-radius: 0.25em;
 	margin-right: 55px;;
 	border-bottom: 5px solid #9ae5e2;
@@ -93,14 +99,14 @@ nav a:hover
 }
 
 
-#buttonHover:hover{
+#buttonHover , #buttonHover1 , #buttonHover2:hover{
 background: #ebfaf9;
 }
 
 ah{
 
-	font-family: 'Gentium' , serif
-	color =  #19ff00;
+	font-family: 'Gentium' , serif;
+	color: #19ff00;
 }
 
 
@@ -142,27 +148,4 @@ font-weight: bold;
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: #000000;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 160px;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    background-color: #D5F4F3;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }

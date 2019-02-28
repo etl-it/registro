@@ -8,11 +8,8 @@
 	<script type="text/javascript" src="JS/bootstrap.min.js"></script>
 
 -->
-  <?php
 
-      include 'functions.php';
 
- ?>  
 
 
 </head>
@@ -35,17 +32,26 @@
 
 
 
-    list($ds , $ldaprdn , $ldappass) = conect_ldap($user , $passwd , "Alum");
-  
+  $ds = ldap_connect ("ldaps://repldap.lab.it.uc3m.es",636) //Nos conectamos al servidor de ldap
+  or die ("Could not connect to LDAP Server");
+  $ldaprdn = "uid=".$user.",ou=Alum,dc=lab,dc=it,dc=uc3m,dc=es";
+  $ldappass = $passwd;
   if ($ds) {
-    
+
+
+
+    ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3) ;
     $ldapbind = ldap_bind($ds, $ldaprdn , $ldappass);
 
+
+
     if ($ldapbind) {
+
 
       $link = mysql_connect('localhost', 'registroaulas', '4v3ng3rs', 'aulas')
       or die('No se pudo conectar: ' . mysql_error());
       mysql_select_db('aulas') or die('No se pudo seleccionar la base de datos');
+
 
 
       if ($_SESSION['correcto'] == 1){
@@ -60,22 +66,22 @@
           $nombre = $info[0]["cn"][0];
 	  $mail = $info[0]["mailroutingaddress"][0];
 
-		$paso = " SELECT ID FROM Baneados_pruebas WHERE NIA = '$user'";
+		$paso = " SELECT ID FROM Baneados WHERE NIA = '$user'";
                $var = mysql_query($paso) or die('Consulta fallida: ' . mysql_error());
                $var1 = mysql_fetch_row($var);
 
-	  $sql = " SELECT horaSal FROM Registro_aulas_pruebas WHERE nia = '$user' AND horaSal IS NULL";
+	  $sql = " SELECT horaSal FROM Registro_aulas WHERE nia = '$user' AND horaSal IS NULL";
 
           $va = mysql_query($sql) or die('Consulta fallida: ' . mysql_error());
           $row = mysql_num_rows($va);
 
           /* Comprobar si el aula ya esta abierta */
 
-          $sql2 = " SELECT horaSal FROM Registro_aulas_pruebas WHERE aula= '$aula' AND horaSal IS NULL";
+          $sql2 = " SELECT horaSal FROM Registro_aulas WHERE aula= '$aula' AND horaSal IS NULL";
           $va2 = mysql_query($sql2) or die('Consulta fallida: ' . mysql_error());
           $row2 = mysql_num_rows($va2);
 
-          $sql3 = " SELECT horaSal FROM Registro_aulas_pruebas WHERE aula= '$aula' AND nia = '$user' AND  horaSal IS NULL";
+          $sql3 = " SELECT horaSal FROM Registro_aulas WHERE aula= '$aula' AND nia = '$user' AND  horaSal IS NULL";
           $va3 = mysql_query($sql3) or die('Consulta fallida: ' . mysql_error());
           $row3 = mysql_num_rows($va3);
 
@@ -93,7 +99,7 @@
 		$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 		//dirección del remitente
 		$headers .= "From: ETL <staff@adm.it.uc3m.es>\r\n";
-		//$bool = mail("staff@adm.it.uc3m.es" ,$titulo,$txt,$headers);
+		$bool = mail("staff@adm.it.uc3m.es" ,$titulo,$txt,$headers);
 
 
 
@@ -101,7 +107,7 @@
 
             if($row == 0 && $row2 == 0){
 
-                $query = "  INSERT INTO `Registro_aulas_pruebas` (`ID`, `fecha`, `horaEnt`, `aula`, `nombre`, `nia`, `horaSal`) VALUES ('', '$fech', '$hore', '$aula', '$nombre', '$user ', NULL);";
+                $query = "  INSERT INTO `Registro_aulas` (`ID`, `fecha`, `horaEnt`, `aula`, `nombre`, `nia`, `horaSal`) VALUES ('', '$fech', '$hore', '$aula', '$nombre', '$user ', NULL);";
 
 		$txt = "Hola $nombre , <br>
 
@@ -118,7 +124,7 @@
 		$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 		//dirección del remitente
 		$headers .= "From: ETL <staff@adm.it.uc3m.es>\r\n";
-		//$bool = mail($mail ,$titulo,$txt,$headers);
+		$bool = mail($mail ,$titulo,$txt,$headers);
 
 		// Correo confirmación de apertura de aula que nos llega a nosotros.
 		$txt = "El alumno $nombre ha solicitado la apertura del $aula el día $fech a la hora $hore";
@@ -129,7 +135,7 @@
 		$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 		//dirección del remitente
 		$headers .= "From: ETL <staff@adm.it.uc3m.es>\r\n";
-		//$bool = mail("staff@adm.it.uc3m.es", $titulo,$txt,$headers);
+		$bool = mail("staff@adm.it.uc3m.es", $titulo,$txt,$headers);
 
 		 header('Location: http://baqueta.lab.it.uc3m.es/registro/registro/registroact.php');
 
@@ -143,10 +149,10 @@
                 echo"<script type=\"text/javascript\">alert('Usted no puede cerrar ese aula.'); window.location='registro.php';</script>";
               }else{
 
-              $paso = " SELECT `ID` FROM `Registro_aulas_pruebas` WHERE `NIA`= '$user' AND `aula` = '$aula' AND `horaSal` IS  NULL; ";
+              $paso = " SELECT `ID` FROM `Registro_aulas` WHERE `NIA`= '$user' AND `aula` = '$aula' AND `horaSal` IS  NULL; ";
               $var = mysql_query($paso) or die('Consulta fallida: ' . mysql_error());
               $var1 = mysql_fetch_row($var);
-              $query = " UPDATE  `aulas`.`Registro_aulas_pruebas` SET  `horaSal` =  '$hore' WHERE  `Registro_aulas_pruebas`.`ID` = '$var1[0]';";
+              $query = " UPDATE  `aulas`.`Registro_aulas` SET  `horaSal` =  '$hore' WHERE  `Registro_aulas`.`ID` = '$var1[0]';";
 
 		$txt = "Hola $nombre , <br>
 
@@ -164,7 +170,7 @@
                  //dirección del remitente
                  $headers .= "From: ETL <staff@adm.it.uc3m.es>\r\n";
                  //Enviamos el mensaje a tu_dirección_email
-                // $bool = mail($mail ,$titulo,$txt,$headers);
+                 $bool = mail($mail ,$titulo,$txt,$headers);
 
 		// Correo confirmación de apertura de aula que nos llega a nosotros.
                 $txt = "El alumno $nombre ha confirmado el cierre del $aula el día $fech a la hora $hore";
@@ -175,7 +181,7 @@
                 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
                 //dirección del remitente
                 $headers .= "From: ETL <staff@adm.it.uc3m.es>\r\n";
-                //$bool = mail("staff@adm.it.uc3m.es", $titulo,$txt,$headers);
+                $bool = mail("staff@adm.it.uc3m.es", $titulo,$txt,$headers);
 
 		 header('Location: http://baqueta.lab.it.uc3m.es/registro/registro/registroact.php');
 	 }

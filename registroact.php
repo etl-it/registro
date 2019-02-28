@@ -5,18 +5,6 @@
       <meta charset="utf-8" />
       <link rel="stylesheet" href="style.css" />
       <title>Sistema de apertura de aulas</title>
-
-
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <!-- Temas-->
-      <link rel="stylesheet" href="CSS/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-      <!-- se vincula al hoja de estilo para definir el aspecto del formulario de login-->
-      <link rel="stylesheet" href="CSS/bootstrap-select.min.css">
-      <script src="JS/jquery.min.js"></script>
-      <script src="JS/bootstrap.min.js"></script>
-      <script src="JS/bootstrap-select.min.js"></script>
-
-
    </head>
 
    <style type="text/css">
@@ -45,7 +33,14 @@
    </style>
 
    <body>
-
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <!-- Temas-->
+      <link rel="stylesheet" href="CSS/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <!-- se vincula al hoja de estilo para definir el aspecto del formulario de login-->
+      <link rel="stylesheet" href="CSS/bootstrap-select.min.css">
+      <script src="JS/jquery.min.js"></script>
+      <script src="JS/bootstrap.min.js"></script>
+      <script src="JS/bootstrap-select.min.js"></script>
       <center>
          <table width=100% style='background-color:#D5F4F3;'>
             <tr>
